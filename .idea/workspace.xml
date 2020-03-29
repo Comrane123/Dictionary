@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ccecd041-50d0-4acb-93d4-a7a5cdba808a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dictionary.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dictionary.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +155,7 @@
       <workItem from="1585233878603" duration="8818000" />
       <workItem from="1585326840493" duration="2951000" />
       <workItem from="1585491138399" duration="17955000" />
-      <workItem from="1585519932259" duration="1668000" />
+      <workItem from="1585519932259" duration="2613000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1585520008649</created>
@@ -190,10 +189,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2386" y="96" width="978" height="922" key="CommitChangelistDialog2" timestamp="1585521346175">
+    <state x="2386" y="96" width="978" height="922" key="CommitChangelistDialog2" timestamp="1585522361859">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2386" y="96" width="978" height="922" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585521346175" />
+    <state x="2386" y="96" width="978" height="922" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585522361859" />
     <state x="2633" y="311" key="FileChooserDialogImpl" timestamp="1585521021434">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
