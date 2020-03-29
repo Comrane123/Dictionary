@@ -105,9 +105,9 @@ class Dictionary(tk.Tk):
             self.language_second.set("Русский")
 
 
-class AutocompleteEntry(Dictionary):
-    def __init__(self):
-        Dictionary.__init__(self)
+class AutocompleteEntry(tk.Entry):
+    def __init__(self, parent, **kwargs):
+        super().__init__(self, parent, **kwargs)
     def word_translate_list(self):
                 # Create a database or connect to one
                 conn = sqlite3.connect('dictionary.db')
