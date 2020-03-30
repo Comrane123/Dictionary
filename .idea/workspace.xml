@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ccecd041-50d0-4acb-93d4-a7a5cdba808a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dictionary.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dictionary.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +179,7 @@
       <workItem from="1585326840493" duration="2951000" />
       <workItem from="1585491138399" duration="17955000" />
       <workItem from="1585519932259" duration="3523000" />
-      <workItem from="1585576303895" duration="1207000" />
+      <workItem from="1585576303895" duration="1613000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1585520008649</created>
@@ -232,7 +230,21 @@
       <option name="project" value="LOCAL" />
       <updated>1585523601554</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="changes #2 and #5">
+      <created>1585577545778</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1585577545778</updated>
+    </task>
+    <task id="LOCAL-00009" summary="changes #2 and #5">
+      <created>1585577586266</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1585577586266</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,17 +253,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create a __main__ entry point - App #2" />
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="changes #2 and #5" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes #2 and #5" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2475" y="215" width="800" height="684" key="#Notifications" timestamp="1585577559400">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2475" y="215" width="800" height="684" key="#Notifications/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585577559400" />
-    <state x="2386" y="96" width="978" height="922" key="CommitChangelistDialog2" timestamp="1585577545702">
+    <state x="2386" y="96" width="978" height="922" key="CommitChangelistDialog2" timestamp="1585577586223">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2386" y="96" width="978" height="922" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585577545702" />
+    <state x="2386" y="96" width="978" height="922" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585577586223" />
     <state x="2633" y="311" key="FileChooserDialogImpl" timestamp="1585521021434">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -280,10 +293,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2645" y="226" width="460" height="661" key="RollbackChangesDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585519684991" />
-    <state x="2475" y="289" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1585577547503">
+    <state x="2475" y="289" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1585577587413">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2475" y="289" width="800" height="536" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585577547503" />
+    <state x="2475" y="289" width="800" height="536" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585577587413" />
     <state x="2543" y="259" key="search.everywhere.popup" timestamp="1585234649110">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
