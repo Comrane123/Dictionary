@@ -15,7 +15,6 @@ class App(tk.Tk):
         conn.commit()
         conn.close()
 
-        # root = tk.Tk(className=' AutocompleteEntry')
         entry = AutocompleteEntry(self)
         entry.set_completion_list(test_list)
         entry.pack()
