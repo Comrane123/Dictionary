@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ccecd041-50d0-4acb-93d4-a7a5cdba808a" name="Default Changelist" comment="first commit">
-      <change beforePath="$PROJECT_DIR$/.idea/Dictionary_v2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+    <list default="true" id="ccecd041-50d0-4acb-93d4-a7a5cdba808a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/App.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dictionary.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dictionary.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +46,29 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Python.Dictionary">
+  <component name="RunManager" selected="Python.App">
+    <configuration name="App" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Dictionary_v2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/App.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Autocomplete" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Dictionary_v2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -140,6 +159,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.App" />
         <item itemvalue="Python.Dictionary" />
         <item itemvalue="Python.Dictionary_2" />
         <item itemvalue="Python.Autocomplete" />
@@ -160,7 +180,8 @@
       <workItem from="1585233878603" duration="8818000" />
       <workItem from="1585326840493" duration="2951000" />
       <workItem from="1585491138399" duration="17955000" />
-      <workItem from="1585519932259" duration="3436000" />
+      <workItem from="1585519932259" duration="3523000" />
+      <workItem from="1585576303895" duration="1207000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1585520008649</created>
@@ -197,54 +218,68 @@
       <option name="project" value="LOCAL" />
       <updated>1585523390913</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="first commit">
+      <created>1585523532676</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1585523532676</updated>
+    </task>
+    <task id="LOCAL-00007" summary="first commit">
+      <created>1585523601554</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1585523601554</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="first commit" />
     <MESSAGE value="Create a __main__ entry point - App #2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create a __main__ entry point - App #2" />
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2386" y="96" width="978" height="922" key="CommitChangelistDialog2" timestamp="1585523532643">
+    <state x="2386" y="96" width="978" height="922" key="CommitChangelistDialog2" timestamp="1585523601521">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2386" y="96" width="978" height="922" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585523532643" />
+    <state x="2386" y="96" width="978" height="922" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585523601521" />
     <state x="2633" y="311" key="FileChooserDialogImpl" timestamp="1585521021434">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2633" y="311" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585521021434" />
-    <state width="1868" height="184" key="GridCell.Tab.0.bottom" timestamp="1585520000319">
+    <state width="1868" height="184" key="GridCell.Tab.0.bottom" timestamp="1585577513286">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1868" height="184" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1585494891949" />
-    <state width="1868" height="184" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585520000319" />
-    <state width="1868" height="184" key="GridCell.Tab.0.center" timestamp="1585520000319">
+    <state width="1868" height="184" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585577513286" />
+    <state width="1868" height="184" key="GridCell.Tab.0.center" timestamp="1585577513286">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1868" height="184" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1585494891949" />
-    <state width="1868" height="184" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585520000319" />
-    <state width="1868" height="184" key="GridCell.Tab.0.left" timestamp="1585520000319">
+    <state width="1868" height="184" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585577513286" />
+    <state width="1868" height="184" key="GridCell.Tab.0.left" timestamp="1585577513286">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1868" height="184" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1585494891949" />
-    <state width="1868" height="184" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585520000319" />
-    <state width="1868" height="184" key="GridCell.Tab.0.right" timestamp="1585520000319">
+    <state width="1868" height="184" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585577513286" />
+    <state width="1868" height="184" key="GridCell.Tab.0.right" timestamp="1585577513286">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1868" height="184" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1585494891949" />
-    <state width="1868" height="184" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585520000319" />
+    <state width="1868" height="184" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585577513286" />
     <state x="2645" y="226" width="460" height="661" key="RollbackChangesDialog" timestamp="1585519684991">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2645" y="226" width="460" height="661" key="RollbackChangesDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585519684991" />
-    <state x="2475" y="289" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1585523538531">
+    <state x="2475" y="289" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1585523603945">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2475" y="289" width="800" height="536" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585523538531" />
+    <state x="2475" y="289" width="800" height="536" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585523603945" />
     <state x="2543" y="259" key="search.everywhere.popup" timestamp="1585234649110">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -253,6 +288,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Dictionary_v2$Dictionary_2_ttk.coverage" NAME="Dictionary_2_ttk Coverage Results" MODIFIED="1585491478040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Dictionary_v2$Dictionary_2.coverage" NAME="Dictionary_2 Coverage Results" MODIFIED="1585518752798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Dictionary_v2$App.coverage" NAME="App Coverage Results" MODIFIED="1585577401101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Dictionary_v2$Autocomplete.coverage" NAME="Autocomplete Coverage Results" MODIFIED="1585494891942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Dictionary_v2$Dictionary.coverage" NAME="Dictionary Coverage Results" MODIFIED="1585519933693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

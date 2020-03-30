@@ -1,5 +1,8 @@
 import tkinter as tk
 # from Dictionary import AutocompleteEntry
+from Autocomplete import AutocompleteEntry
+import sqlite3
+
 
 class App(tk.Tk):
     def __init__(self):
@@ -12,7 +15,8 @@ class App(tk.Tk):
         conn.commit()
         conn.close()
 
-        entry = AutocompleteEntry(root)
+        # root = tk.Tk(className=' AutocompleteEntry')
+        entry = AutocompleteEntry(self)
         entry.set_completion_list(test_list)
         entry.pack()
         entry.focus_set()
