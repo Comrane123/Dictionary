@@ -244,10 +244,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2386" y="96" width="978" height="922" key="CommitChangelistDialog2" timestamp="1585523601521">
+    <state x="2475" y="215" width="800" height="684" key="#Notifications" timestamp="1585577559400">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2386" y="96" width="978" height="922" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585523601521" />
+    <state x="2475" y="215" width="800" height="684" key="#Notifications/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585577559400" />
+    <state x="2386" y="96" width="978" height="922" key="CommitChangelistDialog2" timestamp="1585577545702">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2386" y="96" width="978" height="922" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585577545702" />
     <state x="2633" y="311" key="FileChooserDialogImpl" timestamp="1585521021434">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -276,10 +280,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2645" y="226" width="460" height="661" key="RollbackChangesDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585519684991" />
-    <state x="2475" y="289" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1585523603945">
+    <state x="2475" y="289" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1585577547503">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2475" y="289" width="800" height="536" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585523603945" />
+    <state x="2475" y="289" width="800" height="536" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1585577547503" />
     <state x="2543" y="259" key="search.everywhere.popup" timestamp="1585234649110">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
