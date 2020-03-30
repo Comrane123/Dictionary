@@ -1,6 +1,6 @@
 import tkinter as tk
 import sqlite3
-from functools import partial
+# from functools import partial
 from Autocomplete import AutocompleteEntry
 
 
