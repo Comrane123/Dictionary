@@ -1,12 +1,12 @@
 import tkinter as tk
 import sqlite3
 from functools import partial
+from Autocomplete import AutocompleteEntry
 
 
 class Dictionary(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.set_completion_list = partial(self.set_completion_list, self.word_translate_list)
 
         self.title('Dictionary')
         self.geometry("860x660")
@@ -31,7 +31,7 @@ class Dictionary(tk.Tk):
         self.inner_frame_4.grid(row=1, column=0, padx=10, pady=10)
 
         # Input/output modules
-        self.word_input_entry = tk.Entry(self.inner_frame_1, width=70, command=lambda: self.set_completion_list(self.word_translate_list))
+        self.word_input_entry = AutocompleteEntry(self.inner_frame_1, width=70)
         self.word_input_entry.pack()
 
         self.abbreviation_input_entry = tk.Entry(self.inner_frame_2, width=30)
@@ -106,5 +106,12 @@ class Dictionary(tk.Tk):
 
 
 if __name__ == "__main__":
-    dictionary = AutocompleteEntry()
+    conn = sqlite3.connect('dictionary.db')
+    conn.row_factory = lambda cursor, row: row[0]
+    c = conn.cursor()
+    test_list = c.execute("SELECT rus, eng FROM D1").fetchall()
+    conn.commit()
+    conn.close()
+    dictionary = Dictionary()
+    dictionary.word_input_entry.set_completion_list(test_list)
     dictionary.mainloop()
