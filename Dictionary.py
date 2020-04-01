@@ -34,7 +34,7 @@ class Dictionary(tk.Tk):
         self.word_input_entry = AutocompleteEntry(self.inner_frame_1, width=70)
         self.word_input_entry.pack()
 
-        self.abbreviation_input_entry = tk.Entry(self.inner_frame_2, width=30)
+        self.abbreviation_input_entry = AutocompleteEntry(self.inner_frame_2, width=30)
         self.abbreviation_input_entry.pack()
 
         self.output_text = tk.Text(self.inner_frame_3, width=70)
@@ -73,7 +73,7 @@ class Dictionary(tk.Tk):
 
         if len(word) > 0:
             word_translate = self.word_input_entry.get()
-            result = c.execute("SELECT rus FROM D1 WHERE eng=?", (word_translate,))
+            result = c.execute("SELECT rus FROM words WHERE eng=?", (word_translate,))
             check = result.fetchall()
             if len(check) == 0:
                 self.output_text.insert(tk.INSERT, "Слово отсутствует")
@@ -81,7 +81,7 @@ class Dictionary(tk.Tk):
                 self.output_text.insert(tk.INSERT, check)
         elif len(abbreviation) > 0:
             abbreviation_translate = self.abbreviation_input_entry.get()
-            result = c.execute("SELECT eng FROM D1 WHERE rus=?", (abbreviation_translate,))
+            result = c.execute("SELECT abr_rus FROM abbreviations WHERE abr_eng=?", (abbreviation_translate,))
             check = result.fetchall()
             if len(check) == 0:
                 self.output_text.insert(tk.INSERT, "Аббревиатура отсутствует")
@@ -95,7 +95,6 @@ class Dictionary(tk.Tk):
         # Close connection
         conn.close()
 
-    @classmethod
     def choose_language(self, language_first, language_second):
         if language_first == "Английский":
             self.language_first.set("Русский")
@@ -109,9 +108,11 @@ if __name__ == "__main__":
     conn = sqlite3.connect('dictionary.db')
     conn.row_factory = lambda cursor, row: row[0]
     c = conn.cursor()
-    test_list = c.execute("SELECT rus, eng FROM D1").fetchall()
+    list_word = c.execute("SELECT eng FROM words").fetchall()
+    list_abbr = c.execute("SELECT abr_eng FROM abbreviations").fetchall()
     conn.commit()
     conn.close()
     dictionary = Dictionary()
-    dictionary.word_input_entry.set_completion_list(test_list)
+    dictionary.word_input_entry.set_completion_list(list_word)
+    dictionary.abbreviation_input_entry.set_completion_list(list_abbr)
     dictionary.mainloop()

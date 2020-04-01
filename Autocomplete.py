@@ -30,7 +30,7 @@ class AutocompleteEntry(tkinter.Entry):
         # collect hits
         _hits = []
         for element in self._completion_list:
-            if element.startswith(self.get().lower()):
+            if element.startswith(self.get()):
                 _hits.append(element)
         # if we have a new hit list, keep this in mind
         if _hits != self._hits:
