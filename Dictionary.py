@@ -1,6 +1,5 @@
 import tkinter as tk
 import sqlite3
-# from functools import partial
 from Autocomplete import AutocompleteEntry
 
 
@@ -75,38 +74,51 @@ class Dictionary(tk.Tk):
             if len(word) > 0:
                 word_translate = self.word_input_entry.get()
                 result = c.execute("SELECT rus FROM words WHERE eng=?", (word_translate,))
-                check = result.fetchall()
-                if len(check) == 0:
+                word = result.fetchall()
+                if len(word) == 0:
                     self.output_text.insert(tk.INSERT, "Слово отсутствует")
                 else:
-                    self.output_text.insert(tk.INSERT, check)
+                    self.output_text.insert(tk.INSERT, "ПВО: ")
+                    self.output_text.insert(tk.END, word)
             elif len(abbreviation) > 0:
                 abbreviation_translate = self.abbreviation_input_entry.get()
-                result = c.execute("SELECT abr_rus FROM abbreviations WHERE abr_eng=?", (abbreviation_translate,))
-                check = result.fetchall()
-                if len(check) == 0:
+                result1 = c.execute("SELECT word_eng FROM abbreviations WHERE abr_eng=?", (abbreviation_translate,))
+                word_same = str(result1.fetchall())
+                result2 = c.execute("SELECT abr_rus FROM abbreviations WHERE abr_eng=?", (abbreviation_translate,))
+                abr_other = str(result2.fetchall())
+                result3 = c.execute("SELECT word_rus FROM abbreviations WHERE abr_eng=?", (abbreviation_translate,))
+                word_other = str(result3.fetchall())
+                if len(word_same) == 0:
                     self.output_text.insert(tk.INSERT, "Аббревиатура отсутствует")
                 else:
-                    self.output_text.insert(tk.INSERT, check)
+                    self.output_text.insert(tk.INSERT, "Расшифровка аббривиатуры: " + word_same + '\n')
+                    self.output_text.insert(tk.END, "Аббривиатура на Английском: " + abr_other + '\n')
+                    self.output_text.insert(tk.END, "Расшифровка аббривиатуры на Английском: " + word_other + '\n')
             else:
                 self.output_text.insert(tk.INSERT, "Введите слово или аббривиатуру")
         elif self.language_first.get() == "Русский":
             if len(word) > 0:
                 word_translate = self.word_input_entry.get()
                 result = c.execute("SELECT eng FROM words WHERE rus=?", (word_translate,))
-                check = result.fetchall()
-                if len(check) == 0:
+                word = result.fetchall()
+                if len(word) == 0:
                     self.output_text.insert(tk.INSERT, "Слово отсутствует")
                 else:
-                    self.output_text.insert(tk.INSERT, check)
+                    self.output_text.insert(tk.INSERT, word)
             elif len(abbreviation) > 0:
                 abbreviation_translate = self.abbreviation_input_entry.get()
-                result = c.execute("SELECT abr_eng FROM abbreviations WHERE abr_rus=?", (abbreviation_translate,))
-                check = result.fetchall()
-                if len(check) == 0:
+                result1 = c.execute("SELECT word_rus FROM abbreviations WHERE abr_rus=?", (abbreviation_translate,))
+                word_same = str(result1.fetchall())
+                result2 = c.execute("SELECT abr_eng FROM abbreviations WHERE abr_rus=?", (abbreviation_translate,))
+                abr_other = str(result2.fetchall())
+                result3 = c.execute("SELECT word_eng FROM abbreviations WHERE abr_rus=?", (abbreviation_translate,))
+                word_other = str(result3.fetchall())
+                if len(word_same) == 0:
                     self.output_text.insert(tk.INSERT, "Аббревиатура отсутствует")
                 else:
-                    self.output_text.insert(tk.INSERT, check)
+                    self.output_text.insert(tk.INSERT, "Расшифровка аббривиатуры: " + word_same + '\n')
+                    self.output_text.insert(tk.END, "Аббривиатура на Русском: " + abr_other + '\n')
+                    self.output_text.insert(tk.END, "Расшифровка аббривиатуры на Русском: " + word_other + '\n')
             else:
                 self.output_text.insert(tk.INSERT, "Введите слово или аббривиатуру")
 
