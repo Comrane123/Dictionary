@@ -56,7 +56,7 @@ class Dictionary(tk.Tk):
         self.second_language_label = tk.Label(self.inner_frame_4, textvariable=self.language_second)
         self.second_language_label.grid(row=2, column=0, padx=10, pady=10)
 
-        self.change_language_button = tk.Button(self.inner_frame_4, text="Поменять язык", command=lambda: self.choose_language(self.language_first, self.language_second))
+        self.change_language_button = tk.Button(self.inner_frame_4, text="Поменять язык", command=self.choose_language)
         self.change_language_button.grid(row=1, column=0, padx=10, pady=10)
 
     def translate(self):
@@ -95,11 +95,11 @@ class Dictionary(tk.Tk):
         # Close connection
         conn.close()
 
-    def choose_language(self, language_first, language_second):
-        if language_first == "Английский":
+    def choose_language(self):
+        if self.language_first.get() == "Английский":
             self.language_first.set("Русский")
             self.language_second.set("Английский")
-        elif language_second == "Английский":
+        elif self.language_second.get() == "Английский":
             self.language_first.set("Английский")
             self.language_second.set("Русский")
 
@@ -109,7 +109,7 @@ if __name__ == "__main__":
     conn.row_factory = lambda cursor, row: row[0]
     c = conn.cursor()
     list_word = c.execute("SELECT eng FROM words").fetchall()
-    list_abbr = c.execute("SELECT abr_eng FROM abbreviations").fetchall()
+    list_abbr = c.execute("SELECT abr_eng, abr_rus FROM abbreviations").fetchall()
     conn.commit()
     conn.close()
     dictionary = Dictionary()
