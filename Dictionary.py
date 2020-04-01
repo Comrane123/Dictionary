@@ -71,24 +71,44 @@ class Dictionary(tk.Tk):
         # Create cursor
         c = conn.cursor()
 
-        if len(word) > 0:
-            word_translate = self.word_input_entry.get()
-            result = c.execute("SELECT rus FROM words WHERE eng=?", (word_translate,))
-            check = result.fetchall()
-            if len(check) == 0:
-                self.output_text.insert(tk.INSERT, "Слово отсутствует")
+        if self.language_first.get() == "Английский":
+            if len(word) > 0:
+                word_translate = self.word_input_entry.get()
+                result = c.execute("SELECT rus FROM words WHERE eng=?", (word_translate,))
+                check = result.fetchall()
+                if len(check) == 0:
+                    self.output_text.insert(tk.INSERT, "Слово отсутствует")
+                else:
+                    self.output_text.insert(tk.INSERT, check)
+            elif len(abbreviation) > 0:
+                abbreviation_translate = self.abbreviation_input_entry.get()
+                result = c.execute("SELECT abr_rus FROM abbreviations WHERE abr_eng=?", (abbreviation_translate,))
+                check = result.fetchall()
+                if len(check) == 0:
+                    self.output_text.insert(tk.INSERT, "Аббревиатура отсутствует")
+                else:
+                    self.output_text.insert(tk.INSERT, check)
             else:
-                self.output_text.insert(tk.INSERT, check)
-        elif len(abbreviation) > 0:
-            abbreviation_translate = self.abbreviation_input_entry.get()
-            result = c.execute("SELECT abr_rus FROM abbreviations WHERE abr_eng=?", (abbreviation_translate,))
-            check = result.fetchall()
-            if len(check) == 0:
-                self.output_text.insert(tk.INSERT, "Аббревиатура отсутствует")
+                self.output_text.insert(tk.INSERT, "Введите слово или аббривиатуру")
+        elif self.language_first.get() == "Русский":
+            if len(word) > 0:
+                word_translate = self.word_input_entry.get()
+                result = c.execute("SELECT eng FROM words WHERE rus=?", (word_translate,))
+                check = result.fetchall()
+                if len(check) == 0:
+                    self.output_text.insert(tk.INSERT, "Слово отсутствует")
+                else:
+                    self.output_text.insert(tk.INSERT, check)
+            elif len(abbreviation) > 0:
+                abbreviation_translate = self.abbreviation_input_entry.get()
+                result = c.execute("SELECT abr_eng FROM abbreviations WHERE abr_rus=?", (abbreviation_translate,))
+                check = result.fetchall()
+                if len(check) == 0:
+                    self.output_text.insert(tk.INSERT, "Аббревиатура отсутствует")
+                else:
+                    self.output_text.insert(tk.INSERT, check)
             else:
-                self.output_text.insert(tk.INSERT, check)
-        else:
-            self.output_text.insert(tk.INSERT, "Введите слово или аббривиатуру")
+                self.output_text.insert(tk.INSERT, "Введите слово или аббривиатуру")
 
         # Commit changes
         conn.commit()
