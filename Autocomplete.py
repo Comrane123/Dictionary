@@ -1,5 +1,4 @@
 import tkinter
-import sqlite3
 
 __version__ = "1.0"
 
@@ -65,26 +64,3 @@ class AutocompleteEntry(tkinter.Entry):
         # perform normal autocomplete if event is a single key or an umlaut
         if len(event.keysym) == 1 or event.keysym in tkinter_umlauts:
             self.autocomplete()
-
-
-def test(test_list):
-    """Run a mini application to test the AutocompleteEntry Widget."""
-    root = tkinter.Tk(className=' AutocompleteEntry demo')
-    entry = AutocompleteEntry(root)
-    entry.set_completion_list(test_list)
-    entry.pack()
-    entry.focus_set()
-    root.mainloop()
-
-
-if __name__ == '__main__':
-    conn = sqlite3.connect('dictionary.db')
-    conn.row_factory = lambda cursor, row: row[0]
-    c = conn.cursor()
-    test_list = c.execute("SELECT eng FROM D1").fetchall()
-    conn.commit()
-    conn.close()
-    print("Type a 't' to test the AutocompleteEntry widget.")
-    print("Will use AutocompleteEntry.set_completion_list({})".format(test_list))
-    print("Try also the backspace key and the arrow keys.")
-    test(test_list)

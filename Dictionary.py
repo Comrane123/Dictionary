@@ -2,10 +2,13 @@ import tkinter as tk
 import sqlite3
 from Autocomplete import AutocompleteEntry
 
+language = "Английский"
 
 class Dictionary(tk.Tk):
     def __init__(self):
         super().__init__()
+
+        global language
 
         self.title('Dictionary')
         self.geometry("860x660")
@@ -30,7 +33,7 @@ class Dictionary(tk.Tk):
         self.inner_frame_4.grid(row=1, column=0, padx=10, pady=10)
 
         # Input/output modules
-        self.word_input_entry = AutocompleteEntry(self.inner_frame_1, width=70)
+        self.word_input_entry = AutocompleteEntry(self.inner_frame_1, width=70, text=language)
         self.word_input_entry.pack()
 
         self.abbreviation_input_entry = AutocompleteEntry(self.inner_frame_2, width=30)
@@ -58,6 +61,9 @@ class Dictionary(tk.Tk):
         self.change_language_button = tk.Button(self.inner_frame_4, text="Поменять язык", command=self.choose_language)
         self.change_language_button.grid(row=1, column=0, padx=10, pady=10)
 
+        self.second_language_label = tk.Label(self.inner_frame_4, text=language)
+        self.second_language_label.grid(row=4, column=0, padx=10, pady=10)
+
     def translate(self):
         word = self.word_input_entry.get()
         abbreviation = self.abbreviation_input_entry.get()
@@ -74,7 +80,7 @@ class Dictionary(tk.Tk):
             if len(word) > 0:
                 word_translate = self.word_input_entry.get()
                 result = c.execute("SELECT rus FROM words WHERE eng=?", (word_translate,))
-                word = result.fetchall()
+                word = result.fetchone()
                 if len(word) == 0:
                     self.output_text.insert(tk.INSERT, "Слово отсутствует")
                 else:
@@ -82,15 +88,18 @@ class Dictionary(tk.Tk):
                     self.output_text.insert(tk.END, word)
             elif len(abbreviation) > 0:
                 abbreviation_translate = self.abbreviation_input_entry.get()
+                result0 = c.execute("SELECT flag FROM abbreviations WHERE abr_eng=?", (abbreviation_translate,))
+                flag = str(result0.fetchone())
                 result1 = c.execute("SELECT word_eng FROM abbreviations WHERE abr_eng=?", (abbreviation_translate,))
-                word_same = str(result1.fetchall())
+                word_same = str(result1.fetchone())
                 result2 = c.execute("SELECT abr_rus FROM abbreviations WHERE abr_eng=?", (abbreviation_translate,))
-                abr_other = str(result2.fetchall())
+                abr_other = str(result2.fetchone())
                 result3 = c.execute("SELECT word_rus FROM abbreviations WHERE abr_eng=?", (abbreviation_translate,))
-                word_other = str(result3.fetchall())
+                word_other = str(result3.fetchone())
                 if len(word_same) == 0:
                     self.output_text.insert(tk.INSERT, "Аббревиатура отсутствует")
                 else:
+                    self.output_text.insert(tk.INSERT, "---" + flag + "---" + '\n')
                     self.output_text.insert(tk.INSERT, "Расшифровка аббривиатуры: " + word_same + '\n')
                     self.output_text.insert(tk.END, "Аббривиатура на Английском: " + abr_other + '\n')
                     self.output_text.insert(tk.END, "Расшифровка аббривиатуры на Английском: " + word_other + '\n')
@@ -100,22 +109,25 @@ class Dictionary(tk.Tk):
             if len(word) > 0:
                 word_translate = self.word_input_entry.get()
                 result = c.execute("SELECT eng FROM words WHERE rus=?", (word_translate,))
-                word = result.fetchall()
+                word = result.fetchone()
                 if len(word) == 0:
                     self.output_text.insert(tk.INSERT, "Слово отсутствует")
                 else:
                     self.output_text.insert(tk.INSERT, word)
             elif len(abbreviation) > 0:
                 abbreviation_translate = self.abbreviation_input_entry.get()
+                result0 = c.execute("SELECT flag FROM abbreviations WHERE abr_rus=?", (abbreviation_translate,))
+                flag = str(result0.fetchone())
                 result1 = c.execute("SELECT word_rus FROM abbreviations WHERE abr_rus=?", (abbreviation_translate,))
-                word_same = str(result1.fetchall())
+                word_same = str(result1.fetchone())
                 result2 = c.execute("SELECT abr_eng FROM abbreviations WHERE abr_rus=?", (abbreviation_translate,))
-                abr_other = str(result2.fetchall())
+                abr_other = str(result2.fetchone())
                 result3 = c.execute("SELECT word_eng FROM abbreviations WHERE abr_rus=?", (abbreviation_translate,))
-                word_other = str(result3.fetchall())
+                word_other = str(result3.fetchone())
                 if len(word_same) == 0:
                     self.output_text.insert(tk.INSERT, "Аббревиатура отсутствует")
                 else:
+                    self.output_text.insert(tk.INSERT, "---" + flag + "---" + '\n')
                     self.output_text.insert(tk.INSERT, "Расшифровка аббривиатуры: " + word_same + '\n')
                     self.output_text.insert(tk.END, "Аббривиатура на Русском: " + abr_other + '\n')
                     self.output_text.insert(tk.END, "Расшифровка аббривиатуры на Русском: " + word_other + '\n')
@@ -128,20 +140,31 @@ class Dictionary(tk.Tk):
         conn.close()
 
     def choose_language(self):
+        global language
+        language = "Русский"
         if self.language_first.get() == "Английский":
             self.language_first.set("Русский")
             self.language_second.set("Английский")
+
         elif self.language_second.get() == "Английский":
             self.language_first.set("Английский")
             self.language_second.set("Русский")
+            language = "Английский"
 
 
 if __name__ == "__main__":
     conn = sqlite3.connect('dictionary.db')
-    conn.row_factory = lambda cursor, row: row[0]
     c = conn.cursor()
-    list_word = c.execute("SELECT eng FROM words").fetchall()
-    list_abbr = c.execute("SELECT abr_eng, abr_rus FROM abbreviations").fetchall()
+
+    if language == "Английский":
+        c.row_factory = lambda cursor, row: row[0]
+        list_word = c.execute("SELECT eng FROM words").fetchall()
+        list_abbr = c.execute("SELECT abr_eng FROM abbreviations").fetchall()
+    elif language == "Русский":
+        c.row_factory = lambda cursor, row: row[1]
+        list_word = c.execute("SELECT eng FROM words").fetchall()
+        list_abbr = c.execute("SELECT abr_eng FROM abbreviations").fetchall()
+
     conn.commit()
     conn.close()
     dictionary = Dictionary()
