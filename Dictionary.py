@@ -58,7 +58,7 @@ class Dictionary(tk.Tk):
         self.change_language_button.grid(row=1, column=0, padx=10, pady=10)
 
         # Setting completion list
-        self.set_completion_list(1)
+        self.set_completion_list(0)
 
     def translate(self):
         word = self.word_input_entry.get()
