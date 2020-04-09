@@ -57,6 +57,9 @@ class Dictionary(tk.Tk):
         self.change_language_button = tk.Button(self.inner_frame_4, text="Поменять язык", command=self.choose_language)
         self.change_language_button.grid(row=1, column=0, padx=10, pady=10)
 
+        # Setting completion list
+        self.set_completion_list(1)
+
     def translate(self):
         word = self.word_input_entry.get()
         abbreviation = self.abbreviation_input_entry.get()
@@ -141,16 +144,18 @@ class Dictionary(tk.Tk):
             self.language_first.set("Английский")
             self.language_second.set("Русский")
 
+    def set_completion_list(self, language):
+        conn = sqlite3.connect('dictionary.db')
+        c = conn.cursor()
+        c.row_factory = lambda cursor, row: row[language]
+        list_word = c.execute("SELECT eng FROM words").fetchall()
+        list_abbr = c.execute("SELECT abr_eng FROM abbreviations").fetchall()
+        conn.commit()
+        conn.close()
+        self.word_input_entry.set_completion_list(list_word)
+        self.abbreviation_input_entry.set_completion_list(list_abbr)
+
 
 if __name__ == "__main__":
-    conn = sqlite3.connect('dictionary.db')
-    c = conn.cursor()
-    c.row_factory = lambda cursor, row: row[0]
-    list_word = c.execute("SELECT eng FROM words").fetchall()
-    list_abbr = c.execute("SELECT abr_eng FROM abbreviations").fetchall()
-    conn.commit()
-    conn.close()
     dictionary = Dictionary()
-    dictionary.word_input_entry.set_completion_list(list_word)
-    dictionary.abbreviation_input_entry.set_completion_list(list_abbr)
     dictionary.mainloop()
